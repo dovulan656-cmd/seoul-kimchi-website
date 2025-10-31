@@ -1,0 +1,53 @@
+<div id="chatWidget" class="fixed right-8 bottom-8 w-80 bg-white rounded-lg shadow-lg p-0 z-50 hidden">
+    <div id="chatPanel" class="flex flex-col h-80" role="dialog" aria-modal="false" aria-label="Chat with Seoul Bot">
+        <div class="flex items-center justify-between p-3 border-b">
+            <div class="font-semibold text-sm">Seoul Bot</div>
+            <div class="flex items-center gap-2">
+                <button id="voiceBtn"
+                        aria-label="Voice input"
+                        class="p-2 text-gray-600 hover:text-red-600 rounded-full transition-colors"
+                        tabindex="0">
+                    <i class="fas fa-microphone" aria-hidden="true"></i>
+                </button>
+                <button id="closeChat"
+                        aria-label="Close chat"
+                        class="p-2 text-gray-600 hover:text-red-600 rounded transition-colors"
+                        tabindex="0">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div id="chatMessages"
+             class="p-3 h-56 overflow-auto bg-gray-50"
+             role="log"
+             aria-live="polite"
+             aria-atomic="false"
+             tabindex="0">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="p-2 border-t bg-white">
+            <form id="chatForm" class="flex gap-2" onsubmit="return false;">
+                <input id="chatInput"
+                       class="flex-1 px-3 py-2 border rounded text-sm focus:border-red-500 focus:ring focus:ring-red-200 transition"
+                       placeholder="Nhập tin nhắn..."
+                       aria-label="Chat input" />
+                <button id="sendButton"
+                        type="submit"
+                        class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded text-sm transition"
+                        aria-label="Send message">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<button id="chatToggle"
+        aria-label="Open chat"
+        aria-expanded="false"
+        class="fixed right-8 bottom-24 w-14 h-14 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg flex items-center justify-center z-50 transition-transform hover:scale-110"
+        tabindex="0">
+    <i class="fas fa-comments" aria-hidden="true"></i>
+</button>
+
+

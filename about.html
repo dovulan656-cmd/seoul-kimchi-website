@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới Thiệu - SEOUL KIMCHI</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFEJTXEZ79"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-HFEJTXEZ79');
+    </script>
 
     <!-- SEO & Meta Tags -->
     <meta name="description" content="Giới thiệu SEOUL KIMCHI - Thương hiệu kim chi chính hiệu từ 1968, sản phẩm truyền thống Hàn Quốc, chất lượng HACCP.">
@@ -13,7 +21,9 @@
     <meta http-equiv="Content-Security-Policy"
           content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; img-src 'self' data:; font-src 'self' https://cdnjs.cloudflare.com;">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/scrollbar.css">
@@ -51,25 +61,15 @@
         .location-btn { background-color: #FF6B6B; }
     </style>
 </head>
+---
+permalink: about.html
+---
 <body class="bg-white text-gray-900">
 
     <!-- Skip link -->
     <a href="#main" class="sr-only focus:not-sr-only">Skip to main content</a>
 
-    <!-- NAVBAR -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-red-600">
-                🌶️ SEOUL KIMCHI
-            </div>
-            <ul class="flex gap-6 text-sm font-semibold">
-                <li><a href="index.html" class="hover:text-red-600 transition">TRANG CHỦ</a></li>
-                <li><a href="about.html" class="text-red-600 hover:text-red-800">GIỚI THIỆU</a></li>
-                <li><a href="products.html" class="hover:text-red-600 transition">SẢN PHẨM</a></li>
-                <li><a href="contact.html" class="hover:text-red-600 transition">LIÊN HỆ</a></li>
-            </ul>
-        </div>
-    </nav>
+    {% include "partials/header.njk" %}
 
     <main id="main">
 
@@ -169,43 +169,12 @@
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-800 text-white py-12 mt-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">🌶️ SEOUL KIMCHI</h3>
-                    <p class="text-gray-300">Kim chi truyền thống Hàn Quốc chính cống, niềm tin của triệu gia đình Việt.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">📍 ĐỊA CHỈ</h3>
-                    <p class="text-gray-300">B4/118M Tân Liêm, Ấp 2, Xã Bình Hưng<br>H. Bình Chánh, TP.HCM</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">📞 LIÊN HỆ</h3>
-                    <p class="text-gray-300">📱 034 4100 374<br>📧 kimchi27042022@gmail.com</p>
-                </div>
-            </div>
-            <hr class="border-gray-700 mb-8">
-            <p class="text-center text-gray-400">© 2024 SEOUL KIMCHI - CÔNG TY TNHH SẢN XUẤT VÀ THƯƠNG MẠI HAN FOOD VINA</p>
-        </div>
-    </footer>
+    {% include "partials/contact.njk" %}
+    {% include "partials/chat.njk" %}
 
-    <!-- FLOATING BAR -->
-    <div class="floating-bar">
-        <a href="tel:0344100374" class="floating-btn phone-btn" title="Gọi điện">
-            <span class="text-3xl" aria-hidden="true">📞</span>
-        </a>
-        <a href="https://zalo.me/0344100374" target="_blank" rel="noopener noreferrer"
-           class="floating-btn zalo-btn" title="Nhắn Zalo">
-            <span class="text-3xl" aria-hidden="true">💬</span>
-        </a>
-        <a href="https://maps.google.com/?q=B4/118M+Tân+Liêm,+Bình+Chánh,+HCM"
-           target="_blank" rel="noopener noreferrer"
-           class="floating-btn location-btn" title="Địa chỉ">
-            <span class="text-3xl" aria-hidden="true">📍</span>
-        </a>
-    </div>
+    {% include "partials/footer.njk" %}
 
+    <script defer src="js/main.js"></script>
+    <script defer src="js/chatbot.js"></script>
 </body>
 </html>

@@ -344,11 +344,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setup event listeners for navigation links (header, mobile, footer)
     document.querySelectorAll('a[data-section-id]').forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const sectionId = link.getAttribute('data-section-id');
-            goto(sectionId);
-            if (MAIN_DOM.mobileMenu && MAIN_DOM.mobileMenu.classList.contains('active')) {
-                toggleMenu(); // Close mobile menu after navigation
+            const targetOnPage = document.getElementById(sectionId);
+            if (targetOnPage) {
+                e.preventDefault();
+                goto(sectionId);
+                if (MAIN_DOM.mobileMenu && MAIN_DOM.mobileMenu.classList.contains('active')) {
+                    toggleMenu(); // Close mobile menu after navigation
+                }
+            } else {
+                // Not on index page → navigate to root with hash so SPA can handle it
+                window.location.href = `/#${sectionId}`;
             }
         });
     });
@@ -357,8 +363,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoBrand = document.querySelector('.logo-brand[data-section-id="home"]');
     if (logoBrand) {
         logoBrand.addEventListener('click', (e) => {
-            e.preventDefault();
-            goto('home');
+            const homeOnPage = document.getElementById('home');
+            if (homeOnPage) {
+                e.preventDefault();
+                goto('home');
+            } else {
+                window.location.href = '/#home';
+            }
         });
     }
 

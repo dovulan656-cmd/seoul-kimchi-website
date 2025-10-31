@@ -1,0 +1,79 @@
+<div id="contactModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" aria-hidden="true">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-lg mx-4 p-6 relative">
+        <button id="closeContactModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700" aria-label="Close contact form">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2 id="contactModalTitle" class="text-2xl font-bold text-red-700 mb-4">Liên Hệ</h2>
+
+        <div id="successMessage" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+            ✅ Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.
+        </div>
+        <div id="errorMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+            ❌ Có lỗi xảy ra. Vui lòng thử lại hoặc gọi: 034 4100 374
+        </div>
+
+        <form 
+            id="contactFormModal"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-6"
+            novalidate
+        >
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field" /></label></p>
+
+            <div class="form-group">
+                <label for="modalName" class="block text-sm font-bold mb-2">Họ Tên <span class="text-red-600">*</span></label>
+                <input type="text" id="modalName" name="name" placeholder="Nhập họ tên" required minlength="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600">
+            </div>
+
+            <div class="form-group">
+                <label for="modalEmail" class="block text-sm font-bold mb-2">Email <span class="text-red-600">*</span></label>
+                <input type="email" id="modalEmail" name="email" placeholder="your@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600">
+            </div>
+
+            <div class="form-group">
+                <label for="modalPhone" class="block text-sm font-bold mb-2">Số Điện Thoại <span class="text-red-600">*</span></label>
+                <input type="tel" id="modalPhone" name="phone" placeholder="0XXXXXXXXX" required pattern="^(\+84|0)[0-9]{9,10}$" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600">
+            </div>
+
+            <div class="form-group">
+                <label for="modalSubject" class="block text-sm font-bold mb-2">Tiêu Đề <span class="text-red-600">*</span></label>
+                <input type="text" id="modalSubject" name="subject" placeholder="Vd: Hỏi về giá, Đặt hàng, ..." required minlength="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600">
+            </div>
+
+            <div class="form-group">
+                <label for="modalType" class="block text-sm font-bold mb-2">Loại Yêu Cầu <span class="text-red-600">*</span></label>
+                <select id="modalType" name="type" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600">
+                    <option value="">-- Chọn Loại Yêu Cầu --</option>
+                    <option value="thong_tin">Yêu cầu thông tin</option>
+                    <option value="dat_hang">Đặt hàng</option>
+                    <option value="kien_tro">Khiếu nại / Khiếu tố</option>
+                    <option value="phan_hoi">Phản hồi</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="modalMessage" class="block text-sm font-bold mb-2">Nội Dung <span class="text-red-600">*</span></label>
+                <textarea id="modalMessage" name="message" rows="4" placeholder="Nhập nội dung ..." required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600"></textarea>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn-primary">Gửi</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<button id="contactToggle"
+        aria-label="Open contact form"
+        aria-controls="contactModal"
+        aria-expanded="false"
+        class="fixed right-8 bottom-40 w-14 h-14 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 z-50"
+        tabindex="0">
+    <i class="fas fa-envelope" aria-hidden="true"></i>
+</button>
+
+

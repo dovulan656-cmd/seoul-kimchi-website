@@ -1,6 +1,6 @@
 [build]
-  command = "echo 'No build required for static site'"
-  publish = "."
+  command = "npm run build"
+  publish = "_site"
 
 [[headers]]
   for = "/js/*"
