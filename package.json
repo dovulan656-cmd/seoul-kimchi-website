@@ -8,7 +8,7 @@
     "serve": "npx http-server -c-1 -p 3000",
     "build": "npm run build:css && npx @11ty/eleventy",
     "playwright-test": "node tests/playwright/run-chat-test.js",
-    "build:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
     "watch:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --watch"
   },
   "keywords": [],
