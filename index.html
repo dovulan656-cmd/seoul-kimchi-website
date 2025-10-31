@@ -95,6 +95,8 @@
         body{font-family:'Noto Sans',sans-serif}
         .font-display{font-family:'Playfair Display',serif;letter-spacing:-.02em}
         :root{--red:#C8102E;--dark-red:#8B0000}
+        .page-section{display:none}
+        .page-section.active{display:block}
         .btn-primary{background:var(--red);transition:all .3s;border:none;cursor:pointer;text-decoration:none;display:inline-block;color:#fff;padding:.75rem 1.5rem;border-radius:.5rem;font-weight:600}
         .btn-primary:hover{background:var(--dark-red);transform:translateY(-2px);box-shadow:0 10px 25px rgba(200,16,46,.3)}
         .header-sticky{position:sticky;top:0;z-index:40;box-shadow:0 2px 10px rgba(0,0,0,.1)}
@@ -198,7 +200,7 @@
         <div class="header-main border-b">
             <div class="container mx-auto px-4 py-4">
                 <div class="flex justify-between items-center">
-                    <a href="#home" class="logo-brand flex items-center gap-2" data-section-id="home">
+                    <a href="/#home" class="logo-brand flex items-center gap-2" data-section-id="home">
                         <div class="text-2xl font-bold">
                             <div class="text-red-700 font-display">SEOUL KIMCHI</div>
                             <div class="text-xs text-gray-600">🌶️ Since 1968 | HAN FOOD VINA</div>
@@ -206,11 +208,11 @@
                     </a>
 
                     <nav class="hidden lg:flex items-center gap-6 text-sm" role="navigation" aria-label="Main">
-                        <a href="#home" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="home"><i class="fas fa-home mr-1"></i>Trang Chủ</a>
-                        <a href="#products" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="products"><i class="fas fa-shopping-bag mr-1"></i>Sản Phẩm</a>
-                        <a href="#blog" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="blog"><i class="fas fa-blog mr-1"></i>Blog</a>
-                        <a href="#process" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="process"><i class="fas fa-flask mr-1"></i>Quy Trình</a>
-                        <a href="#certifications" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="certifications"><i class="fas fa-certificate mr-1"></i>Chứng Nhận</a>
+                        <a href="/#home" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="home"><i class="fas fa-home mr-1"></i>Trang Chủ</a>
+                        <a href="/#products" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="products"><i class="fas fa-shopping-bag mr-1"></i>Sản Phẩm</a>
+                        <a href="/#blog" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="blog"><i class="fas fa-blog mr-1"></i>Blog</a>
+                        <a href="/#process" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="process"><i class="fas fa-flask mr-1"></i>Quy Trình</a>
+                        <a href="/#certifications" class="nav-link font-semibold hover:text-red-700 transition-colors" data-section-id="certifications"><i class="fas fa-certificate mr-1"></i>Chứng Nhận</a>
                         <a href="javascript:void(0)" class="nav-link font-semibold hover:text-red-700 transition-colors" id="contactNavLink"><i class="fas fa-phone mr-1"></i>Liên Hệ</a>
                     </nav>
 
@@ -220,11 +222,11 @@
                 </div>
 
                 <nav id="mobileMenu" class="mobile-menu lg:hidden mt-4 border-t pt-4" role="navigation" aria-label="Mobile">
-                    <a href="#home" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="home"><i class="fas fa-home mr-2"></i>Trang Chủ</a>
-                    <a href="#products" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="products"><i class="fas fa-shopping-bag mr-2"></i>Sản Phẩm</a>
-                    <a href="#blog" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="blog"><i class="fas fa-blog mr-2"></i>Blog</a>
-                    <a href="#process" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="process"><i class="fas fa-flask mr-2"></i>Quy Trình</a>
-                    <a href="#certifications" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="certifications"><i class="fas fa-certificate mr-2"></i>Chứng Nhận</a>
+                    <a href="/#home" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="home"><i class="fas fa-home mr-2"></i>Trang Chủ</a>
+                    <a href="/#products" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="products"><i class="fas fa-shopping-bag mr-2"></i>Sản Phẩm</a>
+                    <a href="/#blog" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="blog"><i class="fas fa-blog mr-2"></i>Blog</a>
+                    <a href="/#process" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="process"><i class="fas fa-flask mr-2"></i>Quy Trình</a>
+                    <a href="/#certifications" class="nav-link block py-2 hover:text-red-700 transition-colors" data-section-id="certifications"><i class="fas fa-certificate mr-2"></i>Chứng Nhận</a>
                     <a href="javascript:void(0)" class="nav-link block py-2 hover:text-red-700 transition-colors" id="contactNavLinkMobile"><i class="fas fa-phone mr-2"></i>Liên Hệ</a>
                 </nav>
             </div>
@@ -243,7 +245,7 @@
                         <h1 class="font-display text-5xl md:text-6xl font-bold mb-6 fade-in">SEOUL KIMCHI - Hương Vị Hàn Quốc Chính Hiệu Từ 1968</h1>
                         <p class="text-lg md:text-xl mb-8 text-gray-100 fade-in">Muối biển 2 năm tuổi + Bắp cải Hàn Quốc + Ớt bột nhập khẩu = Kim Chi Chuẩn Vị</p>
                         <div class="flex gap-4 fade-in flex-wrap">
-                            <a href="#products" class="btn-primary text-white px-8 py-4 rounded-lg font-bold inline-block" data-section-id="products"><i class="fas fa-shopping-bag mr-2"></i>Xem Sản Phẩm</a>
+                            <a href="/#products" class="btn-primary text-white px-8 py-4 rounded-lg font-bold inline-block" data-section-id="products"><i class="fas fa-shopping-bag mr-2"></i>Xem Sản Phẩm</a>
                             <a href="javascript:void(0)" class="bg-white text-red-700 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 inline-block transition-colors" id="heroContactBtn"><i class="fas fa-phone mr-2"></i>Đặt Hàng Ngay</a>
                         </div>
                     </div>
@@ -601,11 +603,11 @@
                 <div>
                     <h3 class="font-bold text-xl mb-4">Điều Hướng</h3>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="hover:underline" data-section-id="home">Trang Chủ</a></li>
-                        <li><a href="#products" class="hover:underline" data-section-id="products">Sản Phẩm</a></li>
-                        <li><a href="#blog" class="hover:underline" data-section-id="blog">Blog</a></li>
-                        <li><a href="#process" class="hover:underline" data-section-id="process">Quy Trình</a></li>
-                        <li><a href="#certifications" class="hover:underline" data-section-id="certifications">Chứng Nhận</a></li>
+                        <li><a href="/#home" class="hover:underline" data-section-id="home">Trang Chủ</a></li>
+                        <li><a href="/#products" class="hover:underline" data-section-id="products">Sản Phẩm</a></li>
+                        <li><a href="/#blog" class="hover:underline" data-section-id="blog">Blog</a></li>
+                        <li><a href="/#process" class="hover:underline" data-section-id="process">Quy Trình</a></li>
+                        <li><a href="/#certifications" class="hover:underline" data-section-id="certifications">Chứng Nhận</a></li>
                         <li><a href="javascript:void(0)" class="hover:underline" id="footerContactLink">Liên Hệ</a></li>
                     </ul>
                 </div>
@@ -639,69 +641,6 @@
     <script defer src="js/main.js"></script>
     <script defer src="js/chatbot.js"></script>
 
-    <script>
-        /* --------- Contact Modal --------- */
-        const contactToggle = document.getElementById('contactToggle');
-        const contactModal = document.getElementById('contactModal');
-        const closeContactModal = document.getElementById('closeContactModal');
-
-        function openContactModal() {
-            contactModal.classList.remove('hidden');
-            contactToggle.setAttribute('aria-expanded', 'true');
-        }
-        function closeContactModalFn() {
-            contactModal.classList.add('hidden');
-            contactToggle.setAttribute('aria-expanded', 'false');
-        }
-
-        contactToggle.addEventListener('click', openContactModal);
-        closeContactModal.addEventListener('click', closeContactModalFn);
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
-                closeContactModalFn();
-            }
-        });
-
-        /* --------- Footer Year --------- */
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const chatToggle = document.getElementById('chatToggle'); // Nút bubble
-            const chatWidget = document.getElementById('chatWidget'); // Khung chat
-            const closeChat = document.getElementById('closeChat');   // Nút 'X' bên trong khung chat
-
-            // Hàm để mở chat
-            function openChat() {
-                chatWidget.classList.remove('hidden');
-                chatToggle.setAttribute('aria-expanded', 'true');
-                chatWidget.setAttribute('aria-modal', 'true');
-            }
-
-            // Hàm để đóng chat
-            function closeChatFn() {
-                chatWidget.classList.add('hidden');
-                chatToggle.setAttribute('aria-expanded', 'false');
-                chatWidget.setAttribute('aria-modal', 'false');
-            }
-
-            // Gán sự kiện click
-            if (chatToggle) {
-                chatToggle.addEventListener('click', () => {
-                    // Nếu đang ẩn thì mở, nếu đang mở thì đóng
-                    if (chatWidget.classList.contains('hidden')) {
-                        openChat();
-                    } else {
-                        closeChatFn();
-                    }
-                });
-            }
-
-            // Gán sự kiện cho nút 'X' để đóng
-            if (closeChat) {
-                closeChat.addEventListener('click', closeChatFn);
-            }
-        });
-    </script>
+    
 </body>
 </html>

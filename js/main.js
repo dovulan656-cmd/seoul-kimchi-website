@@ -341,8 +341,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupKeyboardShortcuts();
     setupContactForm();
     
-    // Setup event listeners for navigation links
-    document.querySelectorAll('.nav-link[data-section-id]').forEach(link => {
+    // Setup event listeners for navigation links (header, mobile, footer)
+    document.querySelectorAll('a[data-section-id]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const sectionId = link.getAttribute('data-section-id');
@@ -455,6 +455,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    // Handle initial hash deep link (e.g., /#products)
+    const initialHash = (window.location.hash || '').replace('#', '').trim();
+    if (initialHash) {
+        const target = document.getElementById(initialHash);
+        if (target) {
+            goto(initialHash);
+        }
+    }
+
+    // React to manual hash changes
+    window.addEventListener('hashchange', () => {
+        const hash = (window.location.hash || '').replace('#', '').trim();
+        if (hash) {
+            const target = document.getElementById(hash);
+            if (target) goto(hash);
+        }
+    });
+
     console.log('✅ Seoul Kimchi Website Loaded (FIXED)');
 });
 
