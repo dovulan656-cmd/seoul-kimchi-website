@@ -348,9 +348,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetOnPage = document.getElementById(sectionId);
             if (targetOnPage) {
                 e.preventDefault();
-                goto(sectionId);
-                if (MAIN_DOM.mobileMenu && MAIN_DOM.mobileMenu.classList.contains('active')) {
-                    toggleMenu(); // Close mobile menu after navigation
+            goto(sectionId);
+            if (MAIN_DOM.mobileMenu && MAIN_DOM.mobileMenu.classList.contains('active')) {
+                toggleMenu(); // Close mobile menu after navigation
                 }
             } else {
                 // Not on index page → navigate to root with hash so SPA can handle it
@@ -365,8 +365,8 @@ document.addEventListener('DOMContentLoaded', () => {
         logoBrand.addEventListener('click', (e) => {
             const homeOnPage = document.getElementById('home');
             if (homeOnPage) {
-                e.preventDefault();
-                goto('home');
+            e.preventDefault();
+            goto('home');
             } else {
                 window.location.href = '/#home';
             }
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target) goto(hash);
         }
     });
-
+    
     console.log('✅ Seoul Kimchi Website Loaded (FIXED)');
 });
 
