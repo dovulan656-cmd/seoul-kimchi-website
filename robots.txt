@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seoulkimchi.com.vn/sitemap.xml
+
+Crawl-delay: 1
+Request-rate: 30/60
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

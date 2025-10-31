@@ -1,0 +1,28 @@
+{
+  "name": "seoul-kimchi-website",
+  "version": "1.0.0",
+  "description": "Website giới thiệu và bán hàng cho thương hiệu **Seoul Kimchi** - Kim chi Hàn Quốc truyền thống từ 1968.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx http-server -c-1 -p 3000",
+    "playwright-test": "node tests/playwright/run-chat-test.js",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "jsdom": "^20.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
+    "autoprefixer": "^10.4.21",
+    "http-server": "^14.1.1",
+    "playwright": "^1.56.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.16"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Seoul Kimchi",
+  "short_name": "Seoul Kimchi",
+  "description": "Kimchi Chính Hiệu Hàn Quốc | Han Food Vina",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#C8102E",
+  "theme_color": "#C8102E",
+  "icons": [
+    {
+      "src": "/image/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/image/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

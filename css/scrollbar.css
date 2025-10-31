@@ -1,0 +1,42 @@
+/* Modern Firefox */
+#chatMessages {
+    scrollbar-width: thin;
+    scrollbar-color: #C8102E #f3f4f6;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+#chatMessages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatMessages::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 3px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb {
+    background-color: #C8102E;
+    border-radius: 3px;
+    border: 1px solid #f3f4f6;
+}
+
+/* IE */
+#chatMessages {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    #chatMessages {
+        /* Use native scrollbar on mobile for better performance */
+        scrollbar-width: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Fallback for browsers that don't support custom scrollbars */
+@supports not (scrollbar-color: #C8102E #f3f4f6) {
+    #chatMessages {
+        overflow-y: auto;
+    }
+}

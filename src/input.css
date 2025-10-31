@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Blog post & utility rules moved here so @apply works when compiled */
+@layer components {
+  .blog-content h2 {
+    font-size: 1.5rem; /* ~text-2xl */
+    font-weight: 700;
+    margin-top: 2rem; /* ~mt-8 */
+    margin-bottom: 1rem; /* ~mb-4 */
+    color: #C8102E; /* brand red */
+  }
+  .blog-content h3 {
+    font-size: 1.25rem; /* ~text-xl */
+    font-weight: 700;
+    margin-top: 1.5rem; /* ~mt-6 */
+    margin-bottom: 0.75rem; /* ~mb-3 */
+    color: #1f2937; /* gray-800 */
+  }
+  .blog-content p {
+    color: #374151; /* gray-700 */
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .blog-content ul,
+  .blog-content ol {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  .blog-content li {
+    margin-bottom: 0.5rem;
+    color: #374151;
+  }
+
+  /* Tips / boxes used by blog-post-2 and blog-post-3 */
+  .tips-box {
+    background: #faf5ff; /* purple-50 */
+    border-left: 4px solid #7c3aed; /* purple-500 */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .tips-box.green {
+    background: #ecfdf5; /* green-50 */
+    border-left: 4px solid #10b981; /* green-500 */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Floating action bar */
+  .floating-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .floating-btn:hover {
+    transform: scale(1.1);
+  }
+  .phone-btn { background-color: #4CAF50; }
+  .zalo-btn { background-color: #0084FF; }
+  .location-btn { background-color: #FF6B6B; }
+
+  /* Hero gradient used by blog headers */
+  .hero-gradient {
+    background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+  }
+}

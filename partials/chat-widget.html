@@ -1,0 +1,22 @@
+<!-- Partial: chat-widget.html - static chat widget markup (used for templates or manual include) -->
+<div id="chatWidget" class="fixed right-8 bottom-8 w-80 bg-white rounded-lg shadow-lg p-0 z-50" aria-hidden="false">
+    <div id="chatPanel" class="flex flex-col h-80" role="dialog" aria-modal="false" aria-label="Chat with Seoul Bot">
+        <div class="flex items-center justify-between p-3 border-b">
+            <div class="font-semibold text-sm">Seoul Bot</div>
+            <div class="flex items-center gap-2">
+                <button id="voiceBtn" aria-label="Voice input" class="p-2 text-white bg-red-600 rounded-full" tabindex="0"><i class="fas fa-microphone" aria-hidden="true"></i></button>
+                <button id="closeChat" aria-label="Close chat" class="p-2 text-gray-600 rounded" tabindex="0"><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div id="chatMessages" class="p-3 h-56 overflow-auto bg-white" role="log" aria-live="polite" aria-atomic="false" tabindex="0"></div>
+        <div class="p-2 border-t bg-white">
+            <div class="flex gap-2">
+                <input id="chatInput" class="flex-1 px-3 py-2 border rounded text-sm" placeholder="Nhập tin nhắn..." aria-label="Chat input" />
+                <button id="sendButton" class="bg-red-600 text-white px-3 py-2 rounded text-sm" aria-label="Send message">Gửi</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatToggle" aria-label="Open chat" aria-expanded="false" class="fixed right-8 bottom-24 w-14 h-14 bg-red-600 text-white rounded-full shadow-lg flex items-center justify-center z-50" tabindex="0">
+        <i class="fas fa-comments" aria-hidden="true"></i>
+    </button>
+</div>
