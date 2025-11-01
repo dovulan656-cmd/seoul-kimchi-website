@@ -7,12 +7,12 @@
   "scripts": {
     "serve": "npx http-server -c-1 -p 3000",
     "build": "npm run build:css && npx @11ty/eleventy",
-    "build:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
-    "watch:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
     "test": "echo \"No tests configured\" && exit 0"
   },
   "engines": {
-    "node": "18.x"
+    "node": "18.x" 
   },
   "dependencies": {
     "jsdom": "^20.0.3"
