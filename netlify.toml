@@ -1,9 +1,28 @@
+# ⚠️ QUAN TRỌNG: Website đã được cấu hình cho Vercel với API routes
+# 
+# Website hiện tại KHÔNG tương thích với Netlify static export vì:
+# - Đã bỏ 'output: export' để enable API routes
+# - Netlify cần 'output: export' để tạo folder 'out/'
+# - API routes không hoạt động với static export
+#
+# NẾU BẠN DEPLOY LÊN VERCEL:
+# - Không cần file này, bỏ qua hoặc xóa netlify.toml
+# - Xem hướng dẫn trong VERCEL-DEPLOY.md
+#
+# NẾU BẠN MUỐN DEPLOY STATIC LÊN NETLIFY:
+# - Xem DEPLOY-NOTES.md để cấu hình riêng
+# - Cần tạo next.config.netlify.js với output: 'export'
+# - Build command và publish directory sẽ khác
+
 [build]
-  command = "npm run build"
+  command = "npm run build:netlify"
   publish = "out"
 
 [build.environment]
   NODE_VERSION = "22"
+  
+# Lưu ý: Config này chỉ để tránh lỗi build
+# Để deploy thực sự lên Netlify, xem DEPLOY-NOTES.md
 
 [[headers]]
   for = "/js/*"

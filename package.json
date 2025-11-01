@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:netlify": "node scripts/build-netlify.js",
     "start": "next start",
     "lint": "next lint",
     "optimize:image": "node scripts/optimize-image.js",
@@ -13,7 +14,7 @@
     "optimize:watch": "node scripts/optimize-watch.js"
   },
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "dependencies": {
     "@vercel/blob": "^0.23.4",
