@@ -289,7 +289,7 @@ footer h3::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 50px;
+  width: 80px;
   height: 3px;
   background: var(--red);
   border-radius: 2px;
@@ -299,15 +299,17 @@ footer p {
   font-size: 0.9375rem;
   margin-bottom: 0.75rem;
   line-height: 1.7;
+  color: #e5e7eb;
 }
 
 footer a {
-  color: #d1d5db;
+  color: #e5e7eb;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: 500;
 }
 
 footer a:hover {
@@ -323,11 +325,20 @@ footer ul li {
   margin-bottom: 0.75rem;
 }
 
+footer ul li button {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+footer ul li button:hover {
+  color: var(--yellow);
+}
+
 footer address {
   font-style: normal;
   font-size: 0.9375rem;
   line-height: 1.8;
-  color: #d1d5db;
+  color: #e5e7eb;
 }
 
 footer .flex {
@@ -1006,6 +1017,46 @@ select:focus {
     var(--bg-secondary) 50%,
     var(--bg-tertiary) 100%
   );
+}
+
+/* Dark mode footer */
+.dark footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e2e8f0;
+}
+
+.dark footer a {
+  color: #cbd5e1;
+}
+
+.dark footer a:hover {
+  color: var(--yellow);
+}
+
+.dark footer address {
+  color: #cbd5e1;
+}
+
+.dark footer p {
+  color: #cbd5e1;
+}
+
+.dark footer ul li button {
+  color: #cbd5e1;
+}
+
+.dark footer ul li button:hover {
+  color: var(--yellow);
+}
+
+.dark footer .border-t {
+  border-top-color: rgba(255, 255, 255, 0.15);
+  color: #94a3b8;
+}
+
+/* Ensure footer always has good contrast */
+footer {
+  isolation: isolate;
 }
 
 /* Prevent flash on load */
