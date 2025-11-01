@@ -6,7 +6,7 @@ Hướng dẫn deploy website lên Vercel với tính năng upload file thực s
 
 - Vercel account (free tier đủ dùng)
 - GitHub repository
-- Node.js 18+
+- Node.js 22+
 
 ## 🚀 Bước 1: Setup Vercel Blob Storage
 
@@ -170,7 +170,7 @@ Tất cả API routes đều có authentication check.
 
 ### Build failed
 
-- Kiểm tra Node.js version (cần 18+)
+- Kiểm tra Node.js version (cần 22+)
 - Xem build logs trong Vercel Dashboard
 
 ## 📝 Next Steps

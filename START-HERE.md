@@ -70,7 +70,7 @@ npm run lint
 ## ⚠️ Lưu Ý
 
 1. **Phải chạy từ root directory** (nơi có file `package.json`)
-2. **Node.js phải được cài đặt** (version 18.x theo package.json)
+2. **Node.js phải được cài đặt** (version 22.x theo package.json)
 3. **Nếu gặp lỗi**, kiểm tra:
    - Đã `cd` vào đúng thư mục chưa?
    - Đã chạy `npm install` chưa?
@@ -84,7 +84,7 @@ npm run lint
 node -v
 ```
 
-Nên là version 18.x.x (ví dụ: v18.17.0)
+Nên là version 22.x.x (ví dụ: v22.0.0)
 
-Nếu không đúng, cài Node.js 18 từ: https://nodejs.org/
+Nếu không đúng, cài Node.js 22 từ: https://nodejs.org/
 
