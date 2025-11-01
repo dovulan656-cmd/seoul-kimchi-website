@@ -5,6 +5,7 @@ import Footer from './Footer';
 import ContactModal from './ContactModal';
 import ContactToggle from './ContactToggle';
 import ChatWidget from './ChatWidget';
+import { GA_ID } from '../lib/config';
 
 export default function Layout({ children, title, description, image }) {
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -28,17 +29,21 @@ export default function Layout({ children, title, description, image }) {
       <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
       <ContactToggle onClick={() => setContactModalOpen(true)} />
       <ChatWidget />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFEJTXEZ79"></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HFEJTXEZ79');
-          `
-        }}
-      />
+      {GA_ID && (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `
+            }}
+          />
+        </>
+      )}
     </>
   );
 }

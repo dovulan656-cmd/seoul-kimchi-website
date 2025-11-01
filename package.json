@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run optimize:all && next build",
+    "build": "(npm run optimize:all || echo 'Optimize skipped') && next build",
     "start": "next start",
     "lint": "next lint",
     "optimize:image": "node scripts/optimize-image.js",

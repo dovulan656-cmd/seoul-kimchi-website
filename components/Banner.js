@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Banner({ 
   src, 
   alt = 'Banner Seoul Kimchi',
@@ -5,6 +9,30 @@ export default function Banner({
   className = '',
   style = {}
 }) {
+  const [imageError, setImageError] = useState(false);
+
+  if (imageError) {
+    return (
+      <div 
+        className={`banner-container ${className}`}
+        style={{
+          width: '100%',
+          padding: '80px 20px',
+          background: 'linear-gradient(135deg, #fee2e2 0%, #fecaca 100%)',
+          color: '#C8102E',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          fontSize: '1.25rem',
+          borderRadius: '0.75rem',
+          margin: '2rem 0',
+          ...style
+        }}
+      >
+        {alt || 'Banner SEOUL KIMCHI'}
+      </div>
+    );
+  }
+
   return (
     <div 
       className={`banner-container ${className}`}
@@ -29,23 +57,7 @@ export default function Banner({
           transition: 'transform 0.6s ease'
         }}
         loading={priority ? 'eager' : 'lazy'}
-        onError={(e) => {
-          // Fallback nếu ảnh không tải được
-          e.target.style.display = 'none';
-          const placeholder = document.createElement('div');
-          placeholder.style.cssText = `
-            width: 100%;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-            color: #C8102E;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.25rem;
-            border-radius: 0.75rem;
-          `;
-          placeholder.textContent = alt || 'Banner SEOUL KIMCHI';
-          e.target.parentNode.appendChild(placeholder);
-        }}
+        onError={() => setImageError(true)}
       />
     </div>
   );

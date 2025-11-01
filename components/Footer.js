@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CONTACT, getPhoneLink } from '../lib/config';
 
 export default function Footer({ onContactClick }) {
   return (
@@ -10,11 +11,11 @@ export default function Footer({ onContactClick }) {
             <p style={{marginBottom: '1rem', fontSize: '1rem', fontWeight: 600}}>Kimchi chính hiệu từ 1968</p>
             <p style={{marginBottom: '0.75rem'}}>
               <i className="fas fa-phone" style={{marginRight: '0.5rem', color: 'var(--yellow)'}}></i>
-              <a href="tel:0344100374">034 4100 374</a>
+              <a href={getPhoneLink()}>{CONTACT.phoneDisplay}</a>
             </p>
             <p>
               <i className="fas fa-envelope" style={{marginRight: '0.5rem', color: 'var(--yellow)'}}></i>
-              <a href="mailto:kimchi27042022@gmail.com">kimchi27042022@gmail.com</a>
+              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             </p>
           </div>
 

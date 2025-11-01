@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CONTACT } from '../lib/config';
 
 export default function ContactModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -108,7 +109,7 @@ export default function ContactModal({ isOpen, onClose }) {
         )}
         {status === 'error' && (
           <div style={{background: '#fee2e2', border: '1px solid #ef4444', color: '#991b1b', padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1.5rem'}}>
-            ❌ Có lỗi xảy ra. Vui lòng thử lại hoặc gọi: 034 4100 374
+            ❌ Có lỗi xảy ra. Vui lòng thử lại hoặc gọi: {CONTACT.phoneDisplay}
           </div>
         )}
 

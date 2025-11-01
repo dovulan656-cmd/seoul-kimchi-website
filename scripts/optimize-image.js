@@ -258,7 +258,14 @@ async function main() {
     }
     
     const results = await optimizeDirectory(publicImagePath, { backup: false });
-    console.log(`\n✨ Hoàn tất! Đã tối ưu ${results.processed} file, giảm trung bình ${(results.reduction / results.processed).toFixed(1)}%`);
+    
+    if (results.processed === 0) {
+      console.log('\n✨ Hoàn tất! Không tìm thấy file ảnh nào cần tối ưu.');
+      console.log('   💡 Hãy đảm bảo bạn đã thêm file ảnh (jpg, png, webp) vào thư mục public/image/');
+    } else {
+      const avgReduction = (results.reduction / results.processed).toFixed(1);
+      console.log(`\n✨ Hoàn tất! Đã tối ưu ${results.processed} file, giảm trung bình ${avgReduction}%`);
+    }
   } else {
     // Tối ưu file cụ thể
     const fullPath = path.isAbsolute(imagePath) 
@@ -283,4 +290,3 @@ if (require.main === module) {
 }
 
 module.exports = { optimizeImage, optimizeDirectory };
-

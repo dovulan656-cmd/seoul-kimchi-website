@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { CONTACT, getPhoneLink } from '../lib/config';
 
 export default function Header({ onContactClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,11 +11,11 @@ export default function Header({ onContactClick }) {
         <div className="container">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <a href="tel:0344100374" style={{color: 'white', textDecoration: 'none', fontSize: '0.875rem', marginRight: '1rem'}}>
-                <i className="fas fa-phone" aria-hidden="true"></i> 034 4100 374
+              <a href={getPhoneLink()} style={{color: 'white', textDecoration: 'none', fontSize: '0.875rem', marginRight: '1rem'}}>
+                <i className="fas fa-phone" aria-hidden="true"></i> {CONTACT.phoneDisplay}
               </a>
-              <a href="mailto:kimchi27042022@gmail.com" className="hidden md:inline" style={{color: 'white', textDecoration: 'none', fontSize: '0.875rem'}}>
-                <i className="fas fa-envelope" aria-hidden="true"></i> kimchi27042022@gmail.com
+              <a href={`mailto:${CONTACT.email}`} className="hidden md:inline" style={{color: 'white', textDecoration: 'none', fontSize: '0.875rem'}}>
+                <i className="fas fa-envelope" aria-hidden="true"></i> {CONTACT.email}
               </a>
             </div>
             <div className="flex" style={{gap: '0.75rem', fontSize: '1.125rem'}}>

@@ -403,6 +403,17 @@ footer .border-t {
   }
 }
 
+@keyframes typingDot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
 .fade-in {
   animation: fadeInUp 0.8s ease forwards;
 }
