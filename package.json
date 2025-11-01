@@ -5,9 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run optimize:all && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize:image": "node scripts/optimize-image.js",
+    "optimize:all": "node scripts/optimize-image.js",
+    "optimize:watch": "node scripts/optimize-watch.js"
   },
   "engines": {
     "node": "18.x"
@@ -21,7 +24,9 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
+    "chokidar": "^3.6.0",
     "eslint": "^8.0.0",
-    "eslint-config-next": "^14.2.13"
+    "eslint-config-next": "^14.2.13",
+    "sharp": "^0.33.5"
   }
 }

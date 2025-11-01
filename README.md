@@ -51,7 +51,10 @@ npm start
 │   └── chatbot.js    # Chatbot logic
 ├── styles/            # Global styles
 │   └── globals.css   # Global CSS
-├── public/            # Static assets (images, etc.)
+├── public/            # Static assets
+│   └── image/         # Tất cả hình ảnh website (xem public/image/README.md)
+├── scripts/           # Utility scripts
+│   └── setup-image-folders.ps1  # Script thiết lập thư mục ảnh
 ├── next.config.js     # Next.js config
 ├── package.json       # Dependencies
 └── netlify.toml       # Netlify deployment config
@@ -115,6 +118,32 @@ Chỉnh sửa `data/products.js`:
 ### Thêm Chatbot Response
 
 Chỉnh sửa `lib/chatbot.js` - thêm pattern vào object `chatResponses`.
+
+### Quản Lý Hình Ảnh
+
+**📸 Tất cả hình ảnh được lưu trong `public/image/`**
+
+**Hướng dẫn nhanh:**
+1. Đọc `public/image/QUICK-START.md` - Hướng dẫn 3 bước
+2. Đọc `public/image/README.md` - Hướng dẫn chi tiết đầy đủ
+
+**Cấu trúc:**
+- `public/image/banners/` - Banner website
+- `public/image/products/` - Hình ảnh sản phẩm
+- `public/image/blog/` - Hình ảnh blog
+- `public/image/certificates/` - Chứng chỉ
+- `public/image/process/` - Quy trình sản xuất
+- `public/image/icons/` - Icons & favicon
+- `public/image/backgrounds/` - Hình nền
+
+**Component hỗ trợ:**
+- `components/ProductImage.js` - Hiển thị ảnh sản phẩm
+- `components/BlogImage.js` - Hiển thị ảnh blog
+- `components/CertificateImage.js` - Hiển thị ảnh chứng chỉ
+- `components/ProcessImage.js` - Hiển thị ảnh quy trình
+- `components/Banner.js` - Hiển thị banner
+
+Xem `components/README-IMAGES.md` để biết cách sử dụng components.
 
 ## 📝 Notes
 
