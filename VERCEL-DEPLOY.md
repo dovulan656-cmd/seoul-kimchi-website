@@ -6,7 +6,7 @@ Hướng dẫn deploy website lên Vercel với tính năng upload file thực s
 
 - Vercel account (free tier đủ dùng)
 - GitHub repository
-- Node.js 22+
+- Node.js 22+ (đã cấu hình trong `package.json`: `"engines": { "node": "22.x" }`)
 
 ## 🚀 Bước 1: Setup Vercel Blob Storage
 
@@ -169,6 +169,17 @@ Tất cả API routes đều có authentication check.
 - Xem logs trong Vercel Dashboard
 
 ### Build failed
+
+**Nếu gặp lỗi:** `Node.js Version "18.x" is discontinued`
+
+**Giải pháp:**
+1. ✅ Đảm bảo `package.json` có `"engines": { "node": "22.x" }`
+2. ✅ Vào Vercel Dashboard > **Settings** > **General** > **Node.js Version** = `22.x` (hoặc `Auto`)
+3. ✅ Redeploy project
+
+**Hoặc nếu vẫn lỗi:**
+- Xóa project trên Vercel và import lại
+- Vercel sẽ tự động đọc `engines.node` từ `package.json`
 
 - Kiểm tra Node.js version (cần 22+)
 - Xem build logs trong Vercel Dashboard
