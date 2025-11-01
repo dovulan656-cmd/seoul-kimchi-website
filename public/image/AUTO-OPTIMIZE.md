@@ -169,11 +169,11 @@ Script sẽ:
 npm run optimize:image public/image/products/my-image.jpg
 ```
 
-### 4. Tự Động Trong Build
+### 4. Tối Ưu Thủ Công
 
-**Không cần làm gì!** 
+**Tính năng tự động tối ưu trong build đã được tắt.**
 
-Khi chạy `npm run build`, script sẽ tự động tối ưu tất cả ảnh trước khi build.
+Để tối ưu ảnh, bạn cần chạy thủ công các scripts ở trên.
 
 ---
 
@@ -210,14 +210,14 @@ const optimizationConfig = {
 };
 ```
 
-### Tắt Tự Động Trong Build
+### Tự Động Trong Build (Đã Tắt)
 
-Nếu không muốn tự động optimize khi build, chỉnh `package.json`:
+Tính năng tự động optimize trong build đã được tắt. Nếu muốn bật lại, chỉnh `package.json`:
 
 ```json
 {
   "scripts": {
-    "build": "next build"  // Bỏ "npm run optimize:all &&"
+    "build": "(npm run optimize:all || echo 'Optimize skipped') && next build"
   }
 }
 ```

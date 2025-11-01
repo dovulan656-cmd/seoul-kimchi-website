@@ -24,6 +24,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -32,20 +33,17 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# image optimization
+# Image optimization
 public/image/**/*-optimized.*
-
-# cache
 .cache/
 .parcel-cache/
 .eslintcache
-
-# logs
 logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Data files (optional - uncomment if you want to track changes)
+# data/blog.js

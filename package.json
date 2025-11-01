@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "(npm run optimize:all || echo 'Optimize skipped') && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "optimize:image": "node scripts/optimize-image.js",
@@ -16,6 +16,8 @@
     "node": "18.x"
   },
   "dependencies": {
+    "@vercel/blob": "^0.23.4",
+    "formidable": "^3.5.4",
     "next": "^14.2.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

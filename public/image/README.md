@@ -109,11 +109,13 @@ npm run optimize:image public/image/products/my-image.jpg
 | **Icons** | 512px | 100% | Auto | Lossless, giữ nguyên format |
 | **Backgrounds** | 2000px | 85% | Auto | WebP + JPG |
 
-### 🔧 Tự Động Trong Build Process
+### 🔧 Tối Ưu Thủ Công
 
-**Ảnh sẽ tự động được tối ưu khi bạn chạy `npm run build`!**
+**Tính năng tự động tối ưu trong build đã được tắt.**
 
-Không cần làm gì thêm - chỉ cần thêm ảnh vào đúng thư mục và build.
+Để tối ưu ảnh, bạn cần chạy thủ công:
+- `npm run optimize:all` - Tối ưu tất cả ảnh
+- `npm run optimize:watch` - Tự động tối ưu khi thêm ảnh mới
 
 ---
 
