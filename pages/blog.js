@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import Banner from '../components/Banner';
+import { EmptyBlog } from '../components/EmptyState';
 
 const blogPosts = [
   {
@@ -99,8 +100,11 @@ export default function Blog() {
 
       <section style={{padding: '60px 0 100px', backgroundColor: '#f9fafb'}}>
         <div className="container">
-          <div className="grid-cols-auto">
-            {blogPosts.map((post, idx) => (
+          {blogPosts.length === 0 ? (
+            <EmptyBlog />
+          ) : (
+            <div className="grid-cols-auto">
+              {blogPosts.map((post, idx) => (
               <article key={post.id} style={{
                 background: 'white',
                 borderRadius: '1rem',
@@ -194,8 +198,9 @@ export default function Blog() {
                   </Link>
                 </div>
               </article>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </Layout>

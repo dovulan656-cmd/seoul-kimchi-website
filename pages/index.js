@@ -133,12 +133,15 @@ export default function Home() {
           />
         </div>
       </section>
+      
+      {/* Section Divider */}
+      <hr className="section-divider" aria-hidden="true" />
 
       {/* Stats Section */}
       <section style={{padding: '100px 0', backgroundColor: 'white', width: '100%', position: 'relative'}} aria-label="Company Statistics">
         <div style={{maxWidth: '1200px', margin: '0 auto', padding: '0 16px', width: '100%'}}>
           <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2.5rem'}}>
-            <div className="stats-card fade-in">
+            <ScrollAnimation className="stats-card" animationDelay={0}>
               <div style={{fontSize: '4rem', marginBottom: '0.75rem'}}>🏆</div>
               <div className="stats-number">56+</div>
               <p style={{color: '#4b5563', fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem'}}>Năm Kinh Nghiệm</p>
@@ -176,6 +179,9 @@ export default function Home() {
           />
         </div>
       </section>
+      
+      {/* Section Divider */}
+      <hr className="section-divider" aria-hidden="true" />
 
       {/* CTA Section */}
       <section style={{

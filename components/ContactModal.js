@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CONTACT } from '../lib/config';
+import { toast } from './Toast';
 
 export default function ContactModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -34,15 +35,18 @@ export default function ContactModal({ isOpen, onClose }) {
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', subject: '', type: '', message: '' });
+        toast.success('Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.', 'Gửi thành công');
         setTimeout(() => {
           setStatus(null);
           onClose();
-        }, 3000);
+        }, 2000);
       } else {
         setStatus('error');
+        toast.error('Có lỗi xảy ra. Vui lòng thử lại hoặc gọi trực tiếp.', 'Gửi thất bại');
       }
     } catch (error) {
       setStatus('error');
+      toast.error('Có lỗi xảy ra. Vui lòng kiểm tra kết nối và thử lại.', 'Lỗi kết nối');
     }
   };
 
@@ -103,8 +107,19 @@ export default function ContactModal({ isOpen, onClose }) {
         <h2 id="contactModalTitle" style={{fontSize: '1.5rem', fontWeight: 'bold', color: '#C8102E', marginBottom: '1rem'}}>Liên Hệ</h2>
 
         {status === 'success' && (
-          <div style={{background: '#d1fae5', border: '1px solid #10b981', color: '#065f46', padding: '0.75rem 1rem', borderRadius: '0.5rem', marginBottom: '1.5rem'}}>
-            ✅ Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.
+          <div style={{
+            background: '#d1fae5', 
+            border: '1px solid #10b981', 
+            color: '#065f46', 
+            padding: '0.75rem 1rem', 
+            borderRadius: '0.5rem', 
+            marginBottom: '1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}>
+            <span className="success-icon" style={{fontSize: '1.25rem'}}>✅</span>
+            <span>Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</span>
           </div>
         )}
         {status === 'error' && (
@@ -221,8 +236,27 @@ export default function ContactModal({ isOpen, onClose }) {
           </div>
 
           <div style={{textAlign: 'center'}}>
-            <button type="submit" className="btn-primary" disabled={status === 'loading'} style={{padding: '0.75rem 2rem'}}>
-              {status === 'loading' ? 'Đang gửi...' : 'Gửi'}
+            <button 
+              type="submit" 
+              className="btn-primary" 
+              disabled={status === 'loading'} 
+              style={{
+                padding: '0.75rem 2rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                opacity: status === 'loading' ? 0.7 : 1,
+                cursor: status === 'loading' ? 'not-allowed' : 'pointer'
+              }}
+            >
+              {status === 'loading' ? (
+                <>
+                  <span className="spinner" style={{width: '1rem', height: '1rem', borderWidth: '2px'}}></span>
+                  <span>Đang gửi...</span>
+                </>
+              ) : (
+                'Gửi'
+              )}
             </button>
           </div>
         </form>

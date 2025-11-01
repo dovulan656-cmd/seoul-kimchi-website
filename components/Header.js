@@ -43,33 +43,41 @@ export default function Header({ onContactClick }) {
               </div>
             </Link>
 
+            <div style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
+              <DarkModeToggle />
+            </div>
+            
             <nav className="desktop-nav" role="navigation" aria-label="Main">
-              <Link href="/" className="nav-link font-semibold"><i className="fas fa-home"></i> Trang Chủ</Link>
-              <Link href="/products" className="nav-link font-semibold"><i className="fas fa-shopping-bag"></i> Sản Phẩm</Link>
-              <Link href="/blog" className="nav-link font-semibold"><i className="fas fa-blog"></i> Blog</Link>
-              <Link href="/process" className="nav-link font-semibold"><i className="fas fa-flask"></i> Quy Trình</Link>
-              <Link href="/certifications" className="nav-link font-semibold"><i className="fas fa-certificate"></i> Chứng Nhận</Link>
-              <button onClick={onContactClick} className="nav-link font-semibold" style={{
-                background: 'linear-gradient(135deg, var(--red), #ff6b6b)',
-                color: 'white',
-                border: 'none',
-                cursor: 'pointer',
-                padding: '0.625rem 1.25rem',
-                borderRadius: '0.5rem',
-                fontWeight: 600,
-                boxShadow: '0 4px 12px rgba(200, 16, 46, 0.3)',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 6px 20px rgba(200, 16, 46, 0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(200, 16, 46, 0.3)';
-              }}
+              <Link href="/" className="nav-link font-semibold"><i className="fas fa-home" aria-hidden="true"></i> Trang Chủ</Link>
+              <Link href="/products" className="nav-link font-semibold"><i className="fas fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm</Link>
+              <Link href="/blog" className="nav-link font-semibold"><i className="fas fa-blog" aria-hidden="true"></i> Blog</Link>
+              <Link href="/process" className="nav-link font-semibold"><i className="fas fa-flask" aria-hidden="true"></i> Quy Trình</Link>
+              <Link href="/certifications" className="nav-link font-semibold"><i className="fas fa-certificate" aria-hidden="true"></i> Chứng Nhận</Link>
+              <button 
+                onClick={onContactClick} 
+                className="nav-link font-semibold" 
+                style={{
+                  background: 'linear-gradient(135deg, var(--red), #ff6b6b)',
+                  color: 'white',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '0.625rem 1.25rem',
+                  borderRadius: '0.5rem',
+                  fontWeight: 600,
+                  boxShadow: '0 4px 12px rgba(200, 16, 46, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}
+                aria-label="Liên hệ với chúng tôi"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(200, 16, 46, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(200, 16, 46, 0.3)';
+                }}
               >
-                <i className="fas fa-phone"></i> Liên Hệ
+                <i className="fas fa-phone" aria-hidden="true"></i> Liên Hệ
               </button>
             </nav>
 
@@ -89,24 +97,28 @@ export default function Header({ onContactClick }) {
             role="navigation" 
             aria-label="Mobile"
           >
-            <Link href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-home"></i> Trang Chủ</Link>
-            <Link href="/products" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-shopping-bag"></i> Sản Phẩm</Link>
-            <Link href="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-blog"></i> Blog</Link>
-            <Link href="/process" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-flask"></i> Quy Trình</Link>
-            <Link href="/certifications" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-certificate"></i> Chứng Nhận</Link>
-            <button onClick={() => { onContactClick(); setMobileMenuOpen(false); }} style={{
-              width: '100%',
-              textAlign: 'left',
-              background: 'linear-gradient(135deg, var(--red), #ff6b6b)',
-              color: 'white',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '1rem',
-              borderRadius: '0.5rem',
-              fontWeight: 600,
-              marginTop: '0.5rem'
-            }}>
-              <i className="fas fa-phone"></i> Liên Hệ
+            <Link href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-home" aria-hidden="true"></i> Trang Chủ</Link>
+            <Link href="/products" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm</Link>
+            <Link href="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-blog" aria-hidden="true"></i> Blog</Link>
+            <Link href="/process" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-flask" aria-hidden="true"></i> Quy Trình</Link>
+            <Link href="/certifications" className="nav-link" onClick={() => setMobileMenuOpen(false)}><i className="fas fa-certificate" aria-hidden="true"></i> Chứng Nhận</Link>
+            <button 
+              onClick={() => { onContactClick(); setMobileMenuOpen(false); }} 
+              style={{
+                width: '100%',
+                textAlign: 'left',
+                background: 'linear-gradient(135deg, var(--red), #ff6b6b)',
+                color: 'white',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '1rem',
+                borderRadius: '0.5rem',
+                fontWeight: 600,
+                marginTop: '0.5rem'
+              }}
+              aria-label="Liên hệ với chúng tôi"
+            >
+              <i className="fas fa-phone" aria-hidden="true"></i> Liên Hệ
             </button>
           </nav>
         </div>

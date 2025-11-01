@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Layout from '../components/Layout';
 import { products } from '../data/products';
 import Banner from '../components/Banner';
+import { EmptyProducts } from '../components/EmptyState';
+import ScrollAnimation from '../components/ScrollAnimation';
 
 export default function Products() {
   const [filter, setFilter] = useState('all');
@@ -102,26 +104,20 @@ export default function Products() {
           </div>
 
           {filteredProducts.length === 0 ? (
-            <div style={{textAlign: 'center', padding: '4rem 2rem'}}>
-              <div style={{fontSize: '4rem', marginBottom: '1rem'}}>🔍</div>
-              <h3 style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#1f2937'}}>
-                Không tìm thấy sản phẩm
-              </h3>
-              <p style={{color: '#6b7280', marginBottom: '2rem'}}>
-                Thử chọn danh mục khác hoặc liên hệ để được tư vấn
-              </p>
-              <a href="tel:0344100374" className="btn-primary">
-                <i className="fas fa-phone"></i> Gọi: 034 4100 374
-              </a>
-            </div>
+            <EmptyProducts 
+              searchQuery={filter !== 'all' ? filter : null}
+              onClearSearch={() => setFilter('all')}
+            />
           ) : (
             <div className="grid-cols-auto" role="region" aria-live="polite" aria-label="Products list">
               {filteredProducts.map((product, idx) => (
-                <article key={product.id} className="product-card" style={{
-                  animation: `fadeInUp 0.6s ease ${idx * 0.1}s forwards`,
-                  opacity: 0
-                }}>
-                  <div className="product-img" style={{position: 'relative', overflow: 'hidden'}}>
+                <ScrollAnimation key={product.id} className="product-card" animationDelay={idx * 0.1}>
+                  <article style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%'
+                  }}>
+                    <div className="product-img" style={{position: 'relative', overflow: 'hidden'}}>
                     <img
                       src={product.image}
                       alt={product.name}

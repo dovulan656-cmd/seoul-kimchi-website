@@ -5,6 +5,8 @@ import Header from './Header';
 import Footer from './Footer';
 import ContactModal from './ContactModal';
 import ContactToggle from './ContactToggle';
+import DarkModeToggle from './DarkModeToggle';
+import { useToast } from './Toast';
 import { GA_ID } from '../lib/config';
 
 // Dynamic import ChatWidget to reduce initial bundle size
@@ -14,9 +16,15 @@ const ChatWidget = dynamic(() => import('./ChatWidget'), {
 
 export default function Layout({ children, title, description, image }) {
   const [contactModalOpen, setContactModalOpen] = useState(false);
+  const { ToastContainer } = useToast();
 
   return (
     <>
+      {/* Skip to content link for accessibility */}
+      <a href="#main-content" className="skip-to-content">
+        Bỏ qua đến nội dung chính
+      </a>
+      
       <Head>
         <title>{title || 'SEOUL KIMCHI - Kimchi Chính Hiệu Hàn Quốc | Han Food Vina'}</title>
         <meta name="description" content={description || 'Seoul Kimchi - Thương hiệu Kimchi chính hiệu từ 1968. Sản phẩm 100% tự nhiên, chứng nhận HACCP.'} />
@@ -68,11 +76,12 @@ export default function Layout({ children, title, description, image }) {
         {image && <meta property="og:image" content={image} />}
       </Head>
       <Header onContactClick={() => setContactModalOpen(true)} />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <Footer onContactClick={() => setContactModalOpen(true)} />
       <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
       <ContactToggle onClick={() => setContactModalOpen(true)} />
       <ChatWidget />
+      <ToastContainer />
       {GA_ID && (
         <>
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>

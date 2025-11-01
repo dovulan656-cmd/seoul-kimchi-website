@@ -10,11 +10,11 @@ export default function Footer({ onContactClick }) {
             <h3>SEOUL KIMCHI</h3>
             <p style={{marginBottom: '1rem', fontSize: '1rem', fontWeight: 600}}>Kimchi chính hiệu từ 1968</p>
             <p style={{marginBottom: '0.75rem'}}>
-              <i className="fas fa-phone" style={{marginRight: '0.5rem', color: 'var(--yellow)'}}></i>
+              <i className="fas fa-phone" aria-hidden="true" style={{marginRight: '0.5rem', color: 'var(--yellow)'}}></i>
               <a href={getPhoneLink()}>{CONTACT.phoneDisplay}</a>
             </p>
             <p>
-              <i className="fas fa-envelope" style={{marginRight: '0.5rem', color: 'var(--yellow)'}}></i>
+              <i className="fas fa-envelope" aria-hidden="true" style={{marginRight: '0.5rem', color: 'var(--yellow)'}}></i>
               <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             </p>
           </div>
@@ -43,14 +43,14 @@ export default function Footer({ onContactClick }) {
           <div>
             <h3>Theo Dõi</h3>
             <div className="flex">
-              <a href="https://facebook.com/seoulkimchi" target="_blank" rel="noopener">
-                <i className="fab fa-facebook-f"></i>
+              <a href="https://facebook.com/seoulkimchi" target="_blank" rel="noopener" aria-label="Facebook">
+                <i className="fab fa-facebook-f" aria-hidden="true"></i>
               </a>
-              <a href="https://instagram.com/seoulkimchi" target="_blank" rel="noopener">
-                <i className="fab fa-instagram"></i>
+              <a href="https://instagram.com/seoulkimchi" target="_blank" rel="noopener" aria-label="Instagram">
+                <i className="fab fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="https://youtube.com/@seoulkimchi" target="_blank" rel="noopener">
-                <i className="fab fa-youtube"></i>
+              <a href="https://youtube.com/@seoulkimchi" target="_blank" rel="noopener" aria-label="YouTube">
+                <i className="fab fa-youtube" aria-hidden="true"></i>
               </a>
             </div>
           </div>
