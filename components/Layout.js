@@ -5,7 +5,6 @@ import Header from './Header';
 import Footer from './Footer';
 import ContactModal from './ContactModal';
 import ContactToggle from './ContactToggle';
-import DarkModeToggle from './DarkModeToggle';
 import { useToast } from './Toast';
 import { GA_ID } from '../lib/config';
 

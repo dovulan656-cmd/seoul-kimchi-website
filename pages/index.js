@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import Banner from '../components/Banner';
+import ScrollAnimation from '../components/ScrollAnimation';
 
 export default function Home() {
   return (
@@ -146,25 +147,25 @@ export default function Home() {
               <div className="stats-number">56+</div>
               <p style={{color: '#4b5563', fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem'}}>Năm Kinh Nghiệm</p>
               <p style={{fontSize: '0.9375rem', color: '#6b7280'}}>Từ 1968 đến nay</p>
-            </div>
-            <div className="stats-card fade-in-delay-1">
+            </ScrollAnimation>
+            <ScrollAnimation className="stats-card" animationDelay={0.1}>
               <div style={{fontSize: '4rem', marginBottom: '0.75rem'}}>👥</div>
               <div className="stats-number">100K+</div>
               <p style={{color: '#4b5563', fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem'}}>Khách Hàng</p>
               <p style={{fontSize: '0.9375rem', color: '#6b7280'}}>Tin tưởng trên toàn quốc</p>
-            </div>
-            <div className="stats-card fade-in-delay-2">
+            </ScrollAnimation>
+            <ScrollAnimation className="stats-card" animationDelay={0.2}>
               <div style={{fontSize: '4rem', marginBottom: '0.75rem'}}>🌶️</div>
               <div className="stats-number">12+</div>
               <p style={{color: '#4b5563', fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem'}}>Loại Sản Phẩm</p>
               <p style={{fontSize: '0.9375rem', color: '#6b7280'}}>Đa dạng, phong phú</p>
-            </div>
-            <div className="stats-card fade-in-delay-3">
+            </ScrollAnimation>
+            <ScrollAnimation className="stats-card" animationDelay={0.3}>
               <div style={{fontSize: '4rem', marginBottom: '0.75rem'}}>✅</div>
               <div className="stats-number">100%</div>
               <p style={{color: '#4b5563', fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem'}}>Tự Nhiên</p>
               <p style={{fontSize: '0.9375rem', color: '#6b7280'}}>Không hóa chất độc hại</p>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </section>

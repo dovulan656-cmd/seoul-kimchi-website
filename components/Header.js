@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { CONTACT, getPhoneLink } from '../lib/config';
+
+// Dynamic import DarkModeToggle to avoid SSR issues (uses localStorage)
+const DarkModeToggle = dynamic(() => import('./DarkModeToggle'), {
+  ssr: false
+});
 
 export default function Header({ onContactClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

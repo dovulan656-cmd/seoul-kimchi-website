@@ -169,7 +169,8 @@ export default function Products() {
                       </button>
                     </div>
                   </div>
-                </article>
+                  </article>
+                </ScrollAnimation>
               ))}
             </div>
           )}
